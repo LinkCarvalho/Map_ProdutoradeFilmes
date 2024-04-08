@@ -12,6 +12,7 @@ public class Empregado extends Pessoa implements EmpregadoInterface{
         super(nome, CPF);
     }
 
+
     public Empregado() {
     }
 
@@ -20,15 +21,15 @@ public class Empregado extends Pessoa implements EmpregadoInterface{
     }
 
     @Override
-    public void Filmografia() {
+    public void filmografia() {
         for (Filme filme : Filmografia) {
             System.out.println("Filme: " + filme.getNomeFilme());
 
             if (Papeis.contains(Papel.ATOR) && filme.getAtores().contains(this)) {
-                System.out.println("\"" + this.getNome() + "\" foi Ator");
+                System.out.println("\"" + this.getNome() + "\" foi Ator/Atriz");
             }
             if (Papeis.contains(Papel.DIRETOR_DE_FILME) && filme.getDiretores().contains(this)) {
-                System.out.println("\"" + this.getNome() + "\" foi Diretor do Filme");
+                System.out.println("\"" + this.getNome() + "\" foi Diretor(a) do Filme");
             }
             if (Papeis.contains(Papel.CINEGRAFISTA) && filme.getCinegrafista().contains(this)) {
                 System.out.println("\"" + this.getNome() + "\" foi Cameraman");
@@ -37,7 +38,7 @@ public class Empregado extends Pessoa implements EmpregadoInterface{
                 System.out.println("\"" + this.getNome() + "\" foi Roteirista");
             }
             if (Papeis.contains(Papel.PRODUTOR) && filme.getProdutores().contains(this)) {
-                System.out.println("\"" + this.getNome() + "\" foi Produtor");
+                System.out.println("\"" + this.getNome() + "\" foi Produtor(a)");
             }
         }
     }
@@ -53,4 +54,11 @@ public class Empregado extends Pessoa implements EmpregadoInterface{
         }
     }
 
+    public List<String> getPapeis() {
+        return Papeis;
+    }
+
+    public List<Filme> getFilmografia() {
+        return Filmografia;
+    }
 }
